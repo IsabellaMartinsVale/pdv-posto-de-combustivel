@@ -1,4 +1,4 @@
 package com.br.pdvpostocombustivel.api.acesso.dto;
 
-public record AcessoService() {
+public record AcessoResponse(String token) {
 }

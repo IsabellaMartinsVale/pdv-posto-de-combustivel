@@ -1,41 +1,24 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "contato")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Contato {
-    //atributos
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nome;
+    private String email;
     private String telefone;
-    private String endereco;
-    private  String email;
-
-    //construtor
-    public Contato (String telefone, String email, String endereco){
-        this.email = email;
-        this.telefone = telefone;
-        this.endereco = endereco;
-    }
-
-    //getters
-    public String getTelefone (){
-        return telefone;
-    }
-
-    public String getEmail (){
-        return email;
-    }
-
-    public String getEndereco (){
-        return endereco;
-    }
-
-    //setters
-    public void setTelefone(String telefone){
-        this.telefone = telefone;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
 }

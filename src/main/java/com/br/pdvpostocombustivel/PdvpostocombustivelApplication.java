@@ -12,17 +12,17 @@ public class PdvpostocombustivelApplication {
         Pessoa pessoa1 = new Pessoa();
         pessoa1.setNomeCompleto("Isabella");
         pessoa1.setCpfCnpj("49098328911");
-        pessoa1.setNumeroCtps(43224);
+        pessoa1.setNumeroCtps(43224L);
 
         Pessoa pessoa2 = new Pessoa();
         pessoa2.setNomeCompleto("Ana");
         pessoa2.setCpfCnpj("96598328911");
-        pessoa2.setNumeroCtps(63894);
+        pessoa2.setNumeroCtps(63894L);
 
         Pessoa pessoa3 = new Pessoa();
         pessoa3.setNomeCompleto("Guilherme");
         pessoa3.setCpfCnpj("68494654441");
-        pessoa3.setNumeroCtps(12345);
+        pessoa3.setNumeroCtps(12345L);
 
         System.out.println("Nome Completo: " + pessoa1.getNomeCompleto());
         System.out.println("CPF/CNPJ: " + pessoa1.getCpfCnpj());
