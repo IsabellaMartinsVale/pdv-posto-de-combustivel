@@ -1,4 +1,8 @@
 package com.br.pdvpostocombustivel.api.estoque.dto;
 
-public record EstoqueRequest() {
-}
+import java.math.BigDecimal;
+
+public record EstoqueRequest(
+    Long produtoId,
+    BigDecimal quantidade
+) {}

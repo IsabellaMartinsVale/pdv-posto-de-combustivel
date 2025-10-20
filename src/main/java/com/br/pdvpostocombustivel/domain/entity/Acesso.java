@@ -1,39 +1,45 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
-import java.util.UUID;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
+@Entity
+@Table(
+        name = "acessos",
+        uniqueConstraints = {
+                @UniqueConstraint(name = "uk_acessos_usuario", columnNames = "usuario")
+        }
+)
 public class Acesso {
-    //atributos
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank
+    @Size(max = 50)
+    @Column(nullable = false, length = 50, unique = true)
     private String usuario;
+
+    @NotBlank
+    @Size(max = 100)
+    @Column(nullable = false, length = 100)
     private String senha;
 
-    //construtor
-    public Acesso (String usuario, String senha){
+    /** Construtor JPA */
+    public Acesso() {}
+
+    public Acesso(String usuario, String senha) {
         this.usuario = usuario;
         this.senha = senha;
     }
 
-    //getters
-    /*
-     * Exibir o valor que foi atribuido ao argumento.
-     */
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    //setters
-    /*
-     * Atribuir um valor a variavel que irá trazer o valor do argumento para o atributo.
-     */
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+    // Getters e Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getUsuario() { return usuario; }
+    public void setUsuario(String usuario) { this.usuario = usuario; }
+    public String getSenha() { return senha; }
+    public void setSenha(String senha) { this.senha = senha; }
 }

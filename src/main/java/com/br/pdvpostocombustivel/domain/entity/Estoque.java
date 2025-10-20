@@ -1,65 +1,55 @@
 package com.br.pdvpostocombustivel.domain.entity;
 
-import java.math.BigDecimal;
-import java.util.Date;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "estoque")
 public class Estoque {
 
-    //atributos
-    private BigDecimal quantidade;
-    private String localTanque;
-    private String localEndereco;
-    private String loteFabricacao;
-    private Date dataDeValidade;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    //construtor
-    public Estoque (BigDecimal quantidade, String localEndereco, String localTanque, String loteFabricacao, Date dataDeValidade){
+    @NotNull
+    @OneToOne
+    @JoinColumn(name = "produto_id", referencedColumnName = "id")
+    private Produto produto;
+
+    @NotNull
+    @Column(nullable = false)
+    private BigDecimal quantidade;
+
+    public Estoque() {}
+
+    public Estoque(Produto produto, BigDecimal quantidade) {
+        this.produto = produto;
         this.quantidade = quantidade;
-        this.localEndereco = localEndereco;
-        this.localTanque = localTanque;
-        this.dataDeValidade = dataDeValidade;
-        this.loteFabricacao = loteFabricacao;
     }
 
-    //getters
-    public BigDecimal getQuantidade(){
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public BigDecimal getQuantidade() {
         return quantidade;
     }
 
-    public String getLocalTanque(){
-        return localTanque;
-    }
-
-    public String getLocalEndereco(){
-        return localEndereco;
-    }
-
-    public String getLoteFabricacao(){
-        return  loteFabricacao;
-    }
-
-    public Date getDataDeValidade(){
-        return dataDeValidade;
-    }
-
-    //setters
-    public void setQuantidade (BigDecimal quantidade){
+    public void setQuantidade(BigDecimal quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public void setDataDeValidade(Date dataDeValidade) {
-        this.dataDeValidade = dataDeValidade;
-    }
-
-    public void setLocalEndereco(String localEndereco) {
-        this.localEndereco = localEndereco;
-    }
-
-    public void setLocalTanque(String localTanque) {
-        this.localTanque = localTanque;
-    }
-
-    public void setLoteFabricacao(String loteFabricacao) {
-        this.loteFabricacao = loteFabricacao;
     }
 }
