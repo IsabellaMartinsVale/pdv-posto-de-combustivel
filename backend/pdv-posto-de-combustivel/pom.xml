@@ -4,39 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-<<<<<<< HEAD
     <!-- Se preferir estável, troque por 3.4.x e remova os <repositories> SNAPSHOT -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.10-SNAPSHOT</version>
+        <version>3.3.4</version>
         <relativePath/>
     </parent>
+
 
     <groupId>com.br</groupId>
     <artifactId>pdvpostocombustivel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pdvpostocombustivel</name>
     <description>Projeto Java OO utilizando CRUD e Swing</description>
-=======
-    <groupId>com.br</groupId>
-    <artifactId>pdv</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
-
-    <name>pdv-root</name>
-    <description>Projeto PDV - Backend e Frontend</description>
-
-    <modules>
-        <module>backend/pdv-posto-de-combustivel</module>
-        <module>frontend/Java-POO-Frontends</module>
-    </modules>
->>>>>>> 974fa96 (Swagger funcionando)
 
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<<<<<<< HEAD
         <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
@@ -45,6 +30,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- OpenAPI / Swagger -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.2.0</version>
         </dependency>
 
         <!-- JPA/Hibernate -->
@@ -151,9 +143,3 @@
         </pluginRepository>
     </pluginRepositories>
 </project>
-=======
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
-</project>
->>>>>>> 974fa96 (Swagger funcionando)
