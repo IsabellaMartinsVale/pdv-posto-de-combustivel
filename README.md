@@ -33,8 +33,6 @@ src/
 │ └── resources/
 └── test/
 
-yaml
-Copiar código
 
 Principais pacotes:
 - **api/** → Controladores REST  
@@ -104,7 +102,7 @@ A API ficará disponível em:
 👉 http://localhost:8080
 
 👩‍💻 Autora
-Isabella Martins Vale
+Isabella Rodrigues Martins Vale
 Estudante de Engenharia de Software - FATESG
 📫 GitHub
 
