@@ -93,11 +93,7 @@ bash
 Copiar código
 mvn clean install
 mvn spring-boot:run
-ou, se quiser executar o arquivo .jar:
 
-bash
-Copiar código
-java -jar target/pdv-posto-de-combustivel-0.0.1-SNAPSHOT.jar
 A API ficará disponível em:
 👉 http://localhost:8080
 
