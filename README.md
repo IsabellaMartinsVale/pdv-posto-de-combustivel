@@ -10,7 +10,7 @@ Este é o módulo **Backend** do sistema de PDV para Posto de Combustível.
 ## 🛠️ Tecnologias Utilizadas
 
 - **Java 17**  
-- **Spring Boot 3** (Spring Web, Spring Data JPA, Spring Security)  
+- **Spring Boot ** (Spring Web, Spring Data JPA, Spring Security)  
 - **Banco de Dados:** PostgreSQL  
 - **Autenticação:** JWT (via Spring Security) e **BCrypt** para criptografia de senhas  
 - **Gerenciamento de Build:** Apache Maven  
